@@ -13,6 +13,7 @@ namespace DomainModel
         InProcess = 1,
         OnReview = 2,
         Closed = 3,
-        Done = 4
+        Reopen = 4,
+        Resolve = 4
     }
 }
