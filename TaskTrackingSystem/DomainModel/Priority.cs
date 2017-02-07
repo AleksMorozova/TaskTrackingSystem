@@ -9,8 +9,10 @@ namespace DomainModel
     public enum Priority
     {
         None = -1,
-        High = 0,
-        Medium = 1,
-        Low = 2
+        Critical = 0,
+        Major = 1,
+        Minor = 2,
+        Trivial = 3,
+        Blocker = 4
     }
 }
