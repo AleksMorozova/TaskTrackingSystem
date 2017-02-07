@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+
+<div id="login">
+    <form name='form-login'>
+        <span class="fontawesome-user"></span>
+        <input type="text" id="user" placeholder="Username">
+
+        <span class="fontawesome-lock"></span>
+        <input type="password" id="pass" placeholder="Password">
+
+        @*<input type="submit" value="Login">*@
+        
+        @Html.ActionLink("Login","Index","Dashboard")
+    </form>
+</div>
