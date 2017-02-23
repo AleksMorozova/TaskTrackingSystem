@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,6 @@ namespace DomainModel
         public virtual User CurrentUser { get; set; }
         public virtual User Author { get; set; }
         public virtual Category Category { get; set; }
-        public virtual List<History> Tasks { get; set; }
+        public virtual BindingList<History> Tasks { get; set; }
     }
 }
