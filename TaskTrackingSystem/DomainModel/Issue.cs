@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DomainModel
 {
-    public class Task
+    public class Issue
     {
         public Guid Id { get; set; }
         public string Number { get; set; }
