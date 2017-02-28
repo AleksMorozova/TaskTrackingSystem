@@ -6,6 +6,7 @@
 
 <h2 id="test">Index</h2>
 
+<script data-main="assets/ts/tasks/task.entry" src="~/Scripts/require.js"></script>
 <div>
     <table id="demoTable" class="table table-inverse table-striped">
         <thead>
@@ -37,6 +38,15 @@
         </tr>
         </tbody>
     </table>
+</div>
+
+<div ng-controller="TaskController as ctrl">
+    <div ng-repeat="task in ctrl.tasks">
+        <div>
+            <p>Name : {{task.name}}</p>
+            <p>LastName : {{task.lastName}}</p>
+        </div>
+    </div>
 </div>
 
 <script>

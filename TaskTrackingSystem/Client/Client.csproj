@@ -349,10 +349,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap-datepicker.js" />
-    <Content Include="Scripts\bootstrap-datepicker.min.js" />
-    <Content Include="Scripts\bootstrap-datetimepicker.js" />
-    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\menu.js" />
@@ -476,10 +472,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\ts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="assets\ts\core\services\core.service.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\services\task.service.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\services\task.servive.i.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.config.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.d.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.entry.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.module.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.controller.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\model\task.model.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
