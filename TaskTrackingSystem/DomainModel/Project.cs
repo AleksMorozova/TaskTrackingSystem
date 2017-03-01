@@ -14,7 +14,7 @@ namespace DomainModel
         public string Number { get; set; }
         public string Description { get; set; }
         public virtual BindingList<User> Users { get; set; }
-        public virtual BindingList<Task> Tasks { get; set; }
+        public virtual BindingList<Issue> Tasks { get; set; }
         public virtual BindingList<Category> Projects { get; set; }
     }
 }
