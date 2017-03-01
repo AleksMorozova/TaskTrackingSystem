@@ -14,14 +14,26 @@ namespace Services.Implementation
     {
         public void SaveUser(DomainModel.User user)
         {
-            UserDB createdUser = new UserDB();
-
-            Mapper.Map<User, UserDB>(user);
-
-            Registration.UserRepository.Create(createdUser);
+            Registration.UserRepository.Create(Mapper.Map<User, UserDB>(user));
         }
 
-        public List<User> GetAllUsers() { return new List<User>(); }
-        public User GetUserByLogin(string login) { return new User(); }
+        public List<User> GetAllUsers()
+        {
+            List<User> resultUsersList = new List<User>();
+            Registration.UserRepository.ReadAll().ToList()
+                .ForEach(user => resultUsersList.Add(Mapper.Map<UserDB, User>(user)));
+            return resultUsersList;
+        }
+        public User GetUserByLogin(string login)
+        {
+            UserDB resultUser = Registration.UserRepository.ReadAll()
+                .Where(_=>_.Login == login).FirstOrDefault();
+            return Mapper.Map<UserDB, User>(resultUser);
+        }
+
+        public User GetUserByID(Guid ID)
+        {
+            return Mapper.Map<UserDB, User>(Registration.UserRepository.Read(ID));
+        }
     }
 }

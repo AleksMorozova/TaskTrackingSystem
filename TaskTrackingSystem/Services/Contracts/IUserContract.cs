@@ -12,5 +12,6 @@ namespace Services.Contracts
         void SaveUser(User user);
         List<User> GetAllUsers();
         User GetUserByLogin(string login);
+        User GetUserByID(Guid ID);
     }
 }

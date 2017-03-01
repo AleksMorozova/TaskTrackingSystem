@@ -13,7 +13,14 @@ namespace EFRepository
         protected override void Seed(ProjectDBContext context)
         {
             context.Users.Add(
-                new UserDB { FirstName = "Rowan", LastName = "Miller", Login = "hedr" });
+                new UserDB { FirstName = "Rowan", LastName = "Miller", Login = "rowi" });
+
+            context.Users.Add(
+                new UserDB { FirstName = "Andrew", LastName = "Peters", Login = "andp" });
+
+            context.Users.Add(
+                new UserDB { FirstName = "Brice", LastName = "Lambson", Login = "lamb" });
+
             context.SaveChanges();
 
             base.Seed(context);
