@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainModel
+namespace EFRepository.DBModel
 {
-    public class History
+    public class HistoryDB : Entity
     {
-        public Guid Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public Status Status { get; set; }
-        public virtual User AssignedUser { get; set; }
-        public virtual Issue Task { get; set; }
+        public StatusDB Status { get; set; }
+        public virtual UserDB AssignedUser { get; set; }
+        public virtual IssueDB Task { get; set; }
         public string Note { get; set; }
     }
 }
