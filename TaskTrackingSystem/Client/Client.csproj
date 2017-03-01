@@ -467,6 +467,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="assets\ts\tasks\models\task.model.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\services\task.service.i.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\services\task.service.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.constants.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.controller.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.entry.ts" />
+    <TypeScriptCompile Include="assets\ts\tasks\task.module.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
