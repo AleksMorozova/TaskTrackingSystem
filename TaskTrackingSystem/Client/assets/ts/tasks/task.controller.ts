@@ -3,7 +3,7 @@ import FaceSearchProfileItemController = require("watch.facesearchprofile.item.c
 import IFaceSearchControllerScope = require("watch.facesearchprofile.list.controller.scope");
 import IFaceSearchProfileService = require("watch.facesearchprofile.service.i");
 
-class FaceSearchProfileListController extends BaseController {
+class TaskController extends BaseController {
     public $scope: IFaceSearchControllerScope;
     public facesearchProfileService: IFaceSearchProfileService;
 
@@ -45,4 +45,4 @@ class FaceSearchProfileListController extends BaseController {
 
 }
 
-export = FaceSearchProfileListController;
+export = TaskController;

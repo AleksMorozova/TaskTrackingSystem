@@ -1,6 +1,6 @@
 ﻿import Constants = require("./task.constants");
-
-
+import Service = require("./services/task.service");
+import Controller = require("./task.controller");
 var taskConstants = new Constants();
 
 
@@ -11,5 +11,5 @@ angular
         taskConstants.module,
     ])
     .constant(taskConstants.name, taskConstants)
-    .controller(taskConstants.controller, FaceSearchProfileListController)
-    .service(taskConstants.service, DetectionProfileService);
+    .controller(taskConstants.controller, Controller)
+    .service(taskConstants.service, Service);
