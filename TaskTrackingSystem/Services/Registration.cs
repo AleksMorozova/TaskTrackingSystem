@@ -25,12 +25,20 @@ namespace Services
                 return container.Resolve<IRepository<UserDB>>();
             }
         }
+        public static IRepository<IssueDB> IssueRepository
+        {
+            get
+            {
+                return container.Resolve<IRepository<IssueDB>>();
+            }
+        }
 
         static void Registrate()
         {
             var builder = new ContainerBuilder();
 
             builder.RegisterType(typeof(EFRepository<UserDB>)).As(typeof(IRepository<UserDB>));
+            builder.RegisterType(typeof(EFRepository<IssueDB>)).As(typeof(IRepository<IssueDB>));
 
             container = builder.Build();
         }
