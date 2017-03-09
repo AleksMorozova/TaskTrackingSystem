@@ -10,13 +10,20 @@ namespace EFRepository.DBModel
 {
     public class ProjectDB : Entity
     {
+        public ProjectDB()
+        {
+            Categories = new BindingList<CategoryDB>();
+            Issues = new BindingList<IssueDB>();
+            Users = new BindingList<UserDB>();
+        }
+           
         [Required]
         public string Title { get; set; }
         [Required]
         public string Number { get; set; }
         public string Description { get; set; }
         public virtual BindingList<UserDB> Users { get; set; }
-        public virtual BindingList<IssueDB> Tasks { get; set; }
-        public virtual BindingList<CategoryDB> Projects { get; set; }
+        public virtual BindingList<IssueDB> Issues { get; set; }
+        public virtual BindingList<CategoryDB> Categories { get; set; }
     }
 }

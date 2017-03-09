@@ -10,7 +10,7 @@ using AutoMapper;
 
 namespace Services.Implementation
 {
-    class IssueImplementation : IIssueContract
+    public class IssueImplementation : IIssueContract
     {
         public List<Issue> GetAllIssues()
         {

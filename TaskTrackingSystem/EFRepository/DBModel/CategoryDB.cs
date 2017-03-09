@@ -9,6 +9,10 @@ namespace EFRepository.DBModel
 {
     public class CategoryDB : Entity
     {
+        public CategoryDB()
+        {
+            Projects = new BindingList<ProjectDB>();
+        }
         public string CategoryTitle { get; set; }
         public string Type { get; set; }
         public string Addition { get; set; }
