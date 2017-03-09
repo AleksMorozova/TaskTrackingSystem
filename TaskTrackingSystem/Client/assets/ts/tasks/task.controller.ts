@@ -1,20 +1,18 @@
-﻿import BaseController = require("watch.controllerBase");
-import FaceSearchProfileItemController = require("watch.facesearchprofile.item.controller");
-import IFaceSearchControllerScope = require("watch.facesearchprofile.list.controller.scope");
-import IFaceSearchProfileService = require("watch.facesearchprofile.service.i");
+﻿import Controller = require("../common/controllerBase");
+import Service = require("./services/task.service");
 
-class TaskController extends BaseController {
-    public $scope: IFaceSearchControllerScope;
-    public facesearchProfileService: IFaceSearchProfileService;
+class TaskController extends Controller {
+    public $scope: ITaskScope;
+    public facesearchProfileService: Service;
 
     public static $inject = [
         "$scope",
-        "facesearchprofile.service"
+        "task.service"
     ];
 
     constructor(
-        $scope: IFaceSearchControllerScope,
-        facesearchProfileService: IFaceSearchProfileService) {
+        $scope: ITaskScope,
+        facesearchProfileService: Service) {
         super();
 
         this.$scope = $scope;
@@ -30,19 +28,15 @@ class TaskController extends BaseController {
     }
 
     public load() {
-        $("body").addClass("loading");
-        var self = this;
-        this.facesearchProfileService.find<any>()
-            .then(result => {
-                var item = result;
-                self.$scope.facesearchProfile = new FaceSearchProfileItemController(
-                    this.$scope,
-                    item);
-            })
-            .finally(() => { $("body").removeClass("loading"); });
+        this.$scope.Message = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     }
 
 
 }
 
 export = TaskController;
+
+
+interface ITaskScope extends ng.IScope {
+    Message: string;
+}

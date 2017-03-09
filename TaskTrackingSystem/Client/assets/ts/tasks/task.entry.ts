@@ -1,6 +1,7 @@
 ﻿require.config({
     paths: {
-        angular: "../../Scripts/angular"
+        angular: "../../../Scripts/angular",
+        "task.constants": "task.constants"
     },
     shim: {
         jquery: { exports: "jquery" },

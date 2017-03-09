@@ -467,6 +467,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="assets\ts\common\controllerBase.ts" />
     <TypeScriptCompile Include="assets\ts\tasks\models\task.model.ts" />
     <TypeScriptCompile Include="assets\ts\tasks\services\task.service.i.ts" />
     <TypeScriptCompile Include="assets\ts\tasks\services\task.service.ts" />

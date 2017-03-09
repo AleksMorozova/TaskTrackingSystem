@@ -1,7 +1,7 @@
-﻿import Constants = require("./task.constants");
+﻿import TaskConstants = require("task.constants");
 import Service = require("./services/task.service");
 import Controller = require("./task.controller");
-var taskConstants = new Constants();
+var taskConstants = new TaskConstants();
 
 
 angular

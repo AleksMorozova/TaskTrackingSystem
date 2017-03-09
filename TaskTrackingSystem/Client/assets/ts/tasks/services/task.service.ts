@@ -2,16 +2,21 @@
 
 class TaskService implements ITaskService {
 
-    constructor() {
-        
+    public static $inject = [
+        "$http"
+    ];
+
+    public httpService: ng.IHttpService;
+
+    constructor(httpService: ng.IHttpService) {
+        this.httpService = httpService;
     }
 
     find<T>(): angular.IPromise<T> {
-        return this.httpService.apiGet<any>(this.faceSearchProfileConstants.api + this.faceSearchProfileConstants.faceSearchProfile)
+        return this.httpService.get('http://localhost:4737/api/ProductInfoAPI')
             .then(response => {
                 return response.data;
             });
-
     }
 }
 
