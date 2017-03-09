@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Services.Contracts
 {
-    public interface IUserContract
+    interface IIssueContract
     {
-        void SaveUser(User user);
-        List<User> GetAllUsers();
-        User GetUserByLogin(string login);
-        User GetUserByID(Guid ID);
+        List<Issue> GetAllIssues();
     }
 }

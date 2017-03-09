@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfigurator.cs" />
+    <Compile Include="Contracts\IIssueContract.cs" />
     <Compile Include="Contracts\IUserContract.cs" />
+    <Compile Include="Implementation\IssueImplementation.cs" />
     <Compile Include="Implementation\UserImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs" />
