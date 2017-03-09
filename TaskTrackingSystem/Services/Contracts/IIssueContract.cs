@@ -1,14 +1,10 @@
 ﻿using DomainModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Contracts
 {
-    interface IIssueContract
+    public interface IIssueContract
     {
-        List<Issue> GetAllIssues();
+        IEnumerable<Issue> GetAllIssues();
     }
 }
