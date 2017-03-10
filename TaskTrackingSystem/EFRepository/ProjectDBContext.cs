@@ -12,6 +12,7 @@ namespace EFRepository
     {
         public ProjectDBContext() : base()
         {
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
             Database.SetInitializer<ProjectDBContext>(new ProjectDBInitializer());
         }
 

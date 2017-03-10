@@ -10,6 +10,11 @@ namespace EFRepository.DBModel
 {
     public class UserDB : Entity
     {
+        public UserDB()
+        {
+            Projects = new BindingList<ProjectDB>();
+            Roles = new BindingList<RoleDB>();
+        }
         [Required]
         public string Login { get; set; }
         public string FirstName { get; set; }

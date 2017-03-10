@@ -10,6 +10,10 @@ namespace EFRepository.DBModel
 {
     public class IssueDB : Entity
     {
+        public IssueDB()
+        {
+            Histories = new BindingList<HistoryDB>();
+        }
         [Required]
         public string Number { get; set; }
         public string Specification { get; set; }
@@ -21,6 +25,6 @@ namespace EFRepository.DBModel
         public virtual UserDB CurrentUser { get; set; }
         public virtual UserDB Author { get; set; }
         public virtual CategoryDB Category { get; set; }
-        public virtual BindingList<HistoryDB> Tasks { get; set; }
+        public virtual BindingList<HistoryDB> Histories { get; set; }
     }
 }

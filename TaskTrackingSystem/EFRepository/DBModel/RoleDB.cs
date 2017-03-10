@@ -9,6 +9,10 @@ namespace EFRepository.DBModel
 {
     public class RoleDB : Entity
     {
+        public RoleDB()
+        {
+            Permissions = new BindingList<PermissionDB>();
+        }
         public string Name { get; set; }
         public string Description { get; set; }
         public virtual BindingList<PermissionDB> Permissions { get; set; }

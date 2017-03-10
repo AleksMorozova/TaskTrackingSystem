@@ -85,9 +85,9 @@ namespace EFRepository
             context.Tasks.Add(thirdTask);
             context.SaveChanges();
 
-            project.Tasks.Add(firstTask);
-            project.Tasks.Add(secondTask);
-            project.Tasks.Add(thirdTask);
+            project.Issues.Add(firstTask);
+            project.Issues.Add(secondTask);
+            project.Issues.Add(thirdTask);
 
             context.SaveChanges();
             base.Seed(context);
