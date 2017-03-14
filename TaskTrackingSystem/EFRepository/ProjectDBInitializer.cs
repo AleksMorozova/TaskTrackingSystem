@@ -23,7 +23,6 @@ namespace EFRepository
                 FirstName = "Rowan",
                 LastName = "Miller",
                 Login = "rowi",
-                Projects = new BindingList<ProjectDB>() { project }
             };
             context.Users.Add(firstdUser);
 
@@ -32,7 +31,6 @@ namespace EFRepository
                 FirstName = "Andrew",
                 LastName = "Peters",
                 Login = "andp",
-                Projects = new BindingList<ProjectDB>() { project }
             };
             context.Users.Add(secondUser);
 
@@ -41,7 +39,6 @@ namespace EFRepository
                 FirstName = "Brice",
                 LastName = "Lambson",
                 Login = "lamb",
-                Projects = new BindingList<ProjectDB>() { project }
             };
             context.Users.Add(thirdUser);
             context.SaveChanges();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace Server
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AutofacBootstrap.RegisterAutoFac();
+            AutoMapperConfigurator.Configure();
         }
     }
 }

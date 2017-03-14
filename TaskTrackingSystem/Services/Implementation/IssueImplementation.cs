@@ -11,10 +11,7 @@ namespace Services.Implementation
     {
         public IEnumerable<Issue> GetAllIssues()
         {
-            var resultIssuesList = new List<Issue>();
-            var a = Registration.IssueRepository.ReadAll().ToList();
-            //resultIssuesList.AddRange(Registration.IssueRepository.ReadAll().ToList().Select(Mapper.Map<IssueDB, Issue>));
-            return resultIssuesList;
+            return Registration.IssueRepository.ReadAll().ToList().Select(Mapper.Map<IssueDB, Issue>);
         }
     }
 }
