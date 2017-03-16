@@ -1,15 +1,19 @@
-﻿import TaskConstants = require("task.constants");
-import Service = require("./services/task.service");
-import Controller = require("./task.controller");
+﻿import TaskConstants = require("tasks.constant");
+import TaskService = require("tasks.service");
+import TaskListController = require("tasks.list.controller");
+import CommonConstants = require("commonConstants");
+
 var taskConstants = new TaskConstants();
+var commonConstants = new CommonConstants();
 
 
 angular
     .module(
     taskConstants.module,
     [
-        taskConstants.module,
+        taskConstants.module
     ])
     .constant(taskConstants.name, taskConstants)
-    .controller(taskConstants.controller, Controller)
-    .service(taskConstants.service, Service);
+    .constant(commonConstants.name, commonConstants)
+    .controller(taskConstants.controller, TaskListController)
+    .service(taskConstants.service, TaskService);

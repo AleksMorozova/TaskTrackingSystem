@@ -4,44 +4,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 id="test">Index</h2>
+<script data-main="assets/ts/tasks/task.entry.js" src="../Scripts/require.js"></script>
 
-<div>
-    <table id="demoTable" class="table table-inverse table-striped">
+<div ng-controller="task.controller">
+    <table class="table table-striped table-bordered nowrap" width="100%">
         <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
+            <tr>
+                <th>Number</th>
+                <th>Specification</th>
+                <th>CreationDate</th>
+                <th>FinishDate</th>
+                <th>Priority</th>
+                <th>Status</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>Otto</td>
-        </tr>
+            <tr ng-repeat="task in tasks">
+                <td>{{ task.Number }}</td>
+                <td>{{ task.Specification }}</td>
+                <td>{{ task.CreationDate | date:"MM/dd/yyyy h:mma"}}</td>
+                <td>{{ task.FinishDate| date:"MM/dd/yyyy h:mma" }}</td>
+                <td>{{ task.Priority }}</td>
+                <td>{{ task.Status }}</td>
+            </tr>
         </tbody>
     </table>
-</div>
-
-<script data-main="assets/ts/tasks/task.entry.js" src="../Scripts/require.js"></script>
-<div ng-controller="task.controller">
-    <div>{{Message}}</div>
 </div>
 
 <script>
