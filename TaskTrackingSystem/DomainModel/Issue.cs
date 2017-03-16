@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DomainModel
 {
@@ -14,7 +16,11 @@ namespace DomainModel
         public string Specification { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime FinishDate { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public Priority Priority { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public Status Status { get; set; }
         public virtual Project Project { get; set; }
         public virtual User CurrentUser { get; set; }
