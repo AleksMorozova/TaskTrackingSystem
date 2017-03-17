@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Server.Models;
@@ -18,7 +19,7 @@ namespace Server.Controllers
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<TaskAPIModel> GetAllItems()
+        public IEnumerable<TaskAPIModel> GetAllTasks()
         {
             return _contract.GetAllIssues().Select(issue => new TaskAPIModel
             {
@@ -34,6 +35,27 @@ namespace Server.Controllers
                 ProjectName = issue.Project.Title,
                 Specification = issue.Specification
             }).ToList();
+        }
+
+        [HttpPost]
+        [Route("")]
+        public void PostTask([FromBody]TaskAPIModel model)
+        {
+            
+        }
+
+        [HttpPut]
+        [Route("")]
+        public void PutTask(Guid id, [FromBody]TaskAPIModel model)
+        {
+
+        }
+
+        [HttpDelete]
+        [Route("")]
+        public void DeleteTask(Guid id)
+        {
+
         }
     }
 }
