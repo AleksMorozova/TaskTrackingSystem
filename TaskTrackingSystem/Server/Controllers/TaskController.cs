@@ -41,7 +41,6 @@ namespace Server.Controllers
         [Route("")]
         public void PostTask([FromBody]TaskAPIModel model)
         {
-            
         }
 
         [HttpPut]
@@ -55,7 +54,7 @@ namespace Server.Controllers
         [Route("")]
         public void DeleteTask(Guid id)
         {
-
+            _contract.DeleteIssue(id);
         }
     }
 }
