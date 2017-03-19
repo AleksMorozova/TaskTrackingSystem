@@ -15,5 +15,7 @@ namespace Services.Contracts
         void DeleteIssue(Issue model);
 
         void DeleteIssue(Guid issueId);
+
+        Issue FindById(Guid issueId);
     }
 }

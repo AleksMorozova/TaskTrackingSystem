@@ -37,5 +37,11 @@ namespace Services.Implementation
         {
             Registration.IssueRepository.Remove(issueId);
         }
+
+        public Issue FindById(Guid issueId)
+        {
+            var issue = Registration.IssueRepository.Read(issueId);
+            return Mapper.Map<IssueDB, Issue>(issue);
+        }
     }
 }

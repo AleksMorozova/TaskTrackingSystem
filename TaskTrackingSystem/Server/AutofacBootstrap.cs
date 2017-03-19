@@ -2,7 +2,7 @@
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Services.Contracts;
+using Server.Services.Implementation;
 using Services.Implementation;
 
 namespace Server
@@ -11,16 +11,10 @@ namespace Server
     {
         public static IContainer RegisterAutoFac()
         {
-            // Create the container builder.
             var builder = new ContainerBuilder();
-
-            // Register the Web API controllers.
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-
-            // Register other dependencies.
-            builder.Register(c => new IssueImplementation()).As<IIssueContract>().InstancePerApiRequest();
-
-            // Build the container.
+            builder.RegisterType(typeof(TaskService)).AsImplementedInterfaces();
+            builder.RegisterType(typeof(IssueImplementation)).AsImplementedInterfaces();
             var container = builder.Build();
 
             // Create the depenedency resolver.

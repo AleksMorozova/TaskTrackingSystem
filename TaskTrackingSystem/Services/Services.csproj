@@ -79,6 +79,7 @@
     <Compile Include="AutoMapperConfigurator.cs" />
     <Compile Include="Contracts\IIssueContract.cs" />
     <Compile Include="Contracts\IUserContract.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Implementation\IssueImplementation.cs" />
     <Compile Include="Implementation\UserImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
