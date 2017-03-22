@@ -1,4 +1,4 @@
-﻿using EFRepository.DBModel;
+﻿using DomainModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +13,12 @@ namespace EFRepository
     {
         protected override void Seed(ProjectDBContext context)
         {
-            ProjectDB project = new ProjectDB { Title = "First project", Number = "P-1" };
+            Project project = new Project { Title = "First project", Number = "P-1" };
             context.Projects.Add(project);
 
             context.SaveChanges();
 
-            UserDB firstdUser = new UserDB
+            User firstdUser = new User
             {
                 FirstName = "Rowan",
                 LastName = "Miller",
@@ -26,7 +26,7 @@ namespace EFRepository
             };
             context.Users.Add(firstdUser);
 
-            UserDB secondUser = new UserDB
+            User secondUser = new User
             {
                 FirstName = "Andrew",
                 LastName = "Peters",
@@ -34,7 +34,7 @@ namespace EFRepository
             };
             context.Users.Add(secondUser);
 
-            UserDB thirdUser = new UserDB
+            User thirdUser = new User
             {
                 FirstName = "Brice",
                 LastName = "Lambson",
@@ -43,11 +43,11 @@ namespace EFRepository
             context.Users.Add(thirdUser);
             context.SaveChanges();
 
-            IssueDB firstTask = new IssueDB
+            Issue firstTask = new Issue
             {
                 Number = "F-1",
-                Priority = PriorityDB.Minor,
-                Status = StatusDB.InProcess,
+                Priority = Priority.Minor,
+                Status = Status.InProcess,
                 Author = firstdUser,
                 CurrentUser = secondUser,
                 Specification = "first task",
@@ -55,22 +55,22 @@ namespace EFRepository
                 FinishDate = DateTime.Now
             };
 
-            IssueDB secondTask = new IssueDB
+            Issue secondTask = new Issue
             {
                 Number = "F-2",
-                Priority = PriorityDB.Minor,
-                Status = StatusDB.InProcess,
+                Priority = Priority.Minor,
+                Status = Status.InProcess,
                 Author = firstdUser,
                 CurrentUser = secondUser,
                 CreationDate = DateTime.Now,
                 FinishDate = DateTime.Now
             };
 
-            IssueDB thirdTask = new IssueDB
+            Issue thirdTask = new Issue
             {
                 Number = "F-3",
-                Priority = PriorityDB.Minor,
-                Status = StatusDB.InProcess,
+                Priority = Priority.Minor,
+                Status = Status.InProcess,
                 Author = thirdUser,
                 CurrentUser = secondUser,
                 CreationDate = DateTime.Now,

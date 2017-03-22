@@ -1,4 +1,4 @@
-﻿using EFRepository.DBModel;
+﻿using DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,12 +16,12 @@ namespace EFRepository
             Database.SetInitializer<ProjectDBContext>(new ProjectDBInitializer());
         }
 
-        public DbSet<UserDB> Users { get; set; }
-        public DbSet<ProjectDB> Projects { get; set; }
-        public DbSet<IssueDB> Tasks { get; set; }
-        public DbSet<HistoryDB> Histories { get; set; }
-        public DbSet<CategoryDB> Settings { get; set; }
-        public DbSet<RoleDB> Roles { get; set; }
-        public DbSet<PermissionDB> Permissions { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Issue> Tasks { get; set; }
+        public DbSet<History> Histories { get; set; }
+        public DbSet<Category> Settings { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
     }
 }

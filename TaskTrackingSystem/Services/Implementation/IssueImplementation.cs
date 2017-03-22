@@ -3,7 +3,6 @@ using Services.Contracts;
 using System.Collections.Generic;
 using System.Linq;
 using DomainModel;
-using EFRepository.DBModel;
 using AutoMapper;
 
 namespace Services.Implementation
@@ -12,24 +11,21 @@ namespace Services.Implementation
     {
         public IEnumerable<Issue> GetAllIssues()
         {
-            return Registration.IssueRepository.ReadAll().ToList().Select(Mapper.Map<IssueDB, Issue>);
+            return Registration.IssueRepository.ReadAll().ToList();
         }
 
-        public void AddIssue(Issue model)
+        public void AddIssue(Issue issue)
         {
-            var issue = Mapper.Map<Issue, IssueDB>(model);
             Registration.IssueRepository.Create(issue);
         }
 
-        public void UpdateIssue(Issue model)
+        public void UpdateIssue(Issue issue)
         {
-            var issue = Mapper.Map<Issue, IssueDB>(model);
             Registration.IssueRepository.Update(issue);
         }
 
-        public void DeleteIssue(Issue model)
+        public void DeleteIssue(Issue issue)
         {
-            var issue = Mapper.Map<Issue, IssueDB>(model);
             Registration.IssueRepository.Remove(issue);
         }
 
@@ -40,8 +36,7 @@ namespace Services.Implementation
 
         public Issue FindById(Guid issueId)
         {
-            var issue = Registration.IssueRepository.Read(issueId);
-            return Mapper.Map<IssueDB, Issue>(issue);
+            return Registration.IssueRepository.Read(issueId);
         }
     }
 }

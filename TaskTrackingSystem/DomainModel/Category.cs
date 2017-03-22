@@ -4,9 +4,8 @@ using System.ComponentModel;
 
 namespace DomainModel
 {
-    public class Category
+    public class Category: Entity
     {
-        public Guid Id { get; set; }
         public string CategoryTitle { get; set; }
         public string Type { get; set; }
         public string Addition { get; set; }

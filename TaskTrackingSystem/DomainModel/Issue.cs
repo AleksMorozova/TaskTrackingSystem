@@ -5,9 +5,8 @@ using Newtonsoft.Json.Converters;
 
 namespace DomainModel
 {
-    public class Issue
+    public class Issue : Entity
     {
-        public Guid Id { get; set; }
         public string Number { get; set; }
         public string Specification { get; set; }
         public DateTime CreationDate { get; set; }
@@ -22,6 +21,6 @@ namespace DomainModel
         public virtual User CurrentUser { get; set; }
         public virtual User Author { get; set; }
         public virtual Category Category { get; set; }
-        public virtual BindingList<History> Tasks { get; set; }
+        public virtual BindingList<History> Histories { get; set; }
     }
 }

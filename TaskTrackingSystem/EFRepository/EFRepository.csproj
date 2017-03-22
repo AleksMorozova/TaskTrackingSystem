@@ -61,17 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBModel\CategoryDB.cs" />
-    <Compile Include="DBModel\Entity.cs" />
-    <Compile Include="DBModel\HistoryDB.cs" />
-    <Compile Include="DBModel\IssueDB.cs" />
-    <Compile Include="DBModel\PermissionDB.cs" />
-    <Compile Include="DBModel\PermissionTypeDB.cs" />
-    <Compile Include="DBModel\PriorityDB.cs" />
-    <Compile Include="DBModel\ProjectDB.cs" />
-    <Compile Include="DBModel\RoleDB.cs" />
-    <Compile Include="DBModel\StatusDB.cs" />
-    <Compile Include="DBModel\UserDB.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\201702231930575_InitialCreate.cs" />
@@ -91,6 +80,12 @@
     <EmbeddedResource Include="Migrations\201702231930575_InitialCreate.resx">
       <DependentUpon>201702231930575_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{3efa73d3-eb87-4dd0-88bf-cadf01c76190}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

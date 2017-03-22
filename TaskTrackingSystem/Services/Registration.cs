@@ -1,6 +1,6 @@
 ﻿using Autofac;
+using DomainModel;
 using EFRepository;
-using EFRepository.DBModel;
 
 namespace Services
 {
@@ -13,16 +13,16 @@ namespace Services
             Registrate();
         }
 
-        public static IRepository<UserDB> UserRepository => _container.Resolve<IRepository<UserDB>>();
+        public static IRepository<User> UserRepository => _container.Resolve<IRepository<User>>();
 
-        public static IRepository<IssueDB> IssueRepository => _container.Resolve<IRepository<IssueDB>>();
+        public static IRepository<Issue> IssueRepository => _container.Resolve<IRepository<Issue>>();
 
         static void Registrate()
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType(typeof(EFRepository<UserDB>)).As(typeof(IRepository<UserDB>));
-            builder.RegisterType(typeof(EFRepository<IssueDB>)).As(typeof(IRepository<IssueDB>));
+            builder.RegisterType(typeof(EFRepository<User>)).As(typeof(IRepository<User>));
+            builder.RegisterType(typeof(EFRepository<Issue>)).As(typeof(IRepository<Issue>));
 
             _container = builder.Build();
         }
