@@ -63,6 +63,10 @@
   <ItemGroup>
     <Compile Include="EFRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201703232005481_InitialCreate.cs" />
+    <Compile Include="Migrations\201703232005481_InitialCreate.Designer.cs">
+      <DependentUpon>201703232005481_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjectDBContext.cs" />
     <Compile Include="ProjectDBInitializer.cs" />
@@ -77,6 +81,11 @@
       <Project>{3efa73d3-eb87-4dd0-88bf-cadf01c76190}</Project>
       <Name>DomainModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703232005481_InitialCreate.resx">
+      <DependentUpon>201703232005481_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
