@@ -7,6 +7,10 @@ namespace DomainModel
 {
     public class Issue : Entity
     {
+        public Issue()
+        {
+            Histories = new BindingList<History>();
+        }
         public string Number { get; set; }
         public string Specification { get; set; }
         public DateTime CreationDate { get; set; }

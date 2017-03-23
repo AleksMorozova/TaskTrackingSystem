@@ -63,10 +63,6 @@
   <ItemGroup>
     <Compile Include="EFRepository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="Migrations\201702231930575_InitialCreate.cs" />
-    <Compile Include="Migrations\201702231930575_InitialCreate.Designer.cs">
-      <DependentUpon>201702231930575_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjectDBContext.cs" />
     <Compile Include="ProjectDBInitializer.cs" />
@@ -75,11 +71,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702231930575_InitialCreate.resx">
-      <DependentUpon>201702231930575_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">

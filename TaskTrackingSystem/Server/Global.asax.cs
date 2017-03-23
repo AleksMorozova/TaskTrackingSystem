@@ -14,7 +14,7 @@ namespace Server
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AutofacBootstrap.RegisterAutoFac();
-            AutoMapperConfigurator.Configure();
+            //AutoMapperConfigurator.Configure();
         }
     }
 }

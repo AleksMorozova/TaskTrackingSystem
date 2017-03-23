@@ -5,6 +5,11 @@ namespace DomainModel
 {
     public class User : Entity
     {
+        public User()
+        {
+            Projects = new BindingList<Project>();
+            Roles = new BindingList<Role>();
+        }
         public string Login { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
