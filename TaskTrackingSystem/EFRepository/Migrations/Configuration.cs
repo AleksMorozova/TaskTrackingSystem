@@ -10,7 +10,7 @@ namespace EFRepository.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "EFRepo.ProjectDBContext";
+            ContextKey = "TasksTrackingSystem";
         }
     }
 }
