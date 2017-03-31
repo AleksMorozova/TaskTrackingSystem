@@ -1,19 +1,13 @@
-﻿using DomainModel;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
+using DomainModel;
 
 namespace EFRepository
 {
     public class ProjectDBContext : DbContext
     {
-        public ProjectDBContext() : base()
+        public ProjectDBContext()
         {
-            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-            Database.SetInitializer<ProjectDBContext>(new ProjectDBInitializer());
+            Database.SetInitializer(new ProjectDBInitializer());
         }
 
         public DbSet<User> Users { get; set; }

@@ -1,54 +1,51 @@
 ﻿using DomainModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFRepository
 {
     public class EFRepository<T> : IRepository<T> where T : Entity, new()
     {
-        public ProjectDBContext dbContext;
+        public ProjectDBContext DbContext;
 
         public EFRepository()
         {
-            this.dbContext = new ProjectDBContext();
+            DbContext = new ProjectDBContext();
         }
 
         public virtual void Create(T entity)
         {
-            dbContext.Set<T>().Add(entity);
-            dbContext.SaveChanges();
+            DbContext.Set<T>().Add(entity);
+            DbContext.SaveChanges();
         }
 
         public virtual T Read(Guid id)
         {
-            return dbContext.Set<T>().Find(id);
+            return DbContext.Set<T>().Find(id);
         }
 
         public IEnumerable<T> ReadAll()
         {
-            return dbContext.Set<T>();
+            return DbContext.Set<T>();
         }
 
         public void Remove(Guid id)
         {
             var ent = Read(id);
             Remove(ent);
-            dbContext.SaveChanges();
+            DbContext.SaveChanges();
         }
 
         public void Remove(T entity)
         {
-            dbContext.Set<T>().Remove(entity);
-            dbContext.SaveChanges();
+            DbContext.Set<T>().Remove(entity);
+            DbContext.SaveChanges();
         }
 
         public virtual void Update(T entity)
         {
-            dbContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-            dbContext.SaveChanges();
+            DbContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            DbContext.SaveChanges();
         }
     }
 }

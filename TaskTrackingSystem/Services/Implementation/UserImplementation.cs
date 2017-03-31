@@ -1,11 +1,8 @@
-﻿using AutoMapper;
-using DomainModel;
+﻿using DomainModel;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Implementation
 {
@@ -23,8 +20,7 @@ namespace Services.Implementation
 
         public User GetUserByLogin(string login)
         {
-            return Registration.UserRepository.ReadAll()
-                .Where(_ => _.Login == login).FirstOrDefault();
+            return Registration.UserRepository.ReadAll().FirstOrDefault(_ => _.Login == login);
         }
 
         public User GetUserByID(Guid userId)
