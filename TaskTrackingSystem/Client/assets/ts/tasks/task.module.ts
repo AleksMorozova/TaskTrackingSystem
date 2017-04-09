@@ -11,7 +11,8 @@ angular
     .module(
     taskConstants.module,
     [
-        taskConstants.module
+        taskConstants.module,
+        "ngTable"
     ])
     .constant(taskConstants.name, taskConstants)
     .constant(commonConstants.name, commonConstants)

@@ -7,32 +7,48 @@
 <script data-main="assets/ts/tasks/task.entry.js" src="../Scripts/require.js"></script>
 
 <div ng-controller="task.controller">
-    <table class="table table-striped table-bordered nowrap" width="100%">
+    @*<table class="table table-striped table-bordered nowrap" width="100%">
         <thead>
-            <tr>
-                <th>Number</th>
-                <th>Specification</th>
-                <th>CreationDate</th>
-                <th>FinishDate</th>
-                <th>Priority</th>
-                <th>Status</th>
-            </tr>
+        <tr>
+            <th>Number</th>
+            <th>Specification</th>
+            <th>CreationDate</th>
+            <th>FinishDate</th>
+            <th>Priority</th>
+            <th>Status</th>
+        </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="task in tasks">
-                <td>{{ task.Number }}</td>
-                <td>{{ task.Specification }}</td>
-                <td>{{ task.CreationDate | date:"MM/dd/yyyy h:mma"}}</td>
-                <td>{{ task.FinishDate| date:"MM/dd/yyyy h:mma" }}</td>
-                <td>{{ task.Priority }}</td>
-                <td>{{ task.Status }}</td>
-            </tr>
+        <tr ng-repeat="task in tasks">
+            <td>{{ task.Number }}</td>
+            <td>{{ task.Specification }}</td>
+            <td>{{ task.CreationDate | date:"MM/dd/yyyy h:mma"}}</td>
+            <td>{{ task.FinishDate| date:"MM/dd/yyyy h:mma" }}</td>
+            <td>{{ task.Priority }}</td>
+            <td>{{ task.Status }}</td>
+        </tr>
         </tbody>
     </table>
+    
+    
+    <table ng-table class="table" show-filter="true">
+        <tr ng-repeat="task in tasks">
+            <td title="'Specification'" filter="{ Specification: 'text'}" sortable="'Specification'">
+                {{user.Specification}}
+            </td>
+            <td title="'Number'" filter="{ Number: 'number'}" sortable="'Number'">
+                {{user.Number}}
+            </td>
+        </tr>
+    </table>*@
+    
+    
+    <div>
+        <table ng-table class="table">
+            <tr ng-repeat="user in users">
+                <td data-title="'Name'" data-filter="{ Name: 'text'}" data-sortable="'Name'">{{user.name}}</td>
+                <td data-title="'Age'" data-filter="{ Age: 'number'}" data-sortable="'Age'">{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        $('#demoTable').DataTable();
-    });
-</script>

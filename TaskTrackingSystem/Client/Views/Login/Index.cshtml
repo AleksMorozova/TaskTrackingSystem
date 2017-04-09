@@ -17,3 +17,16 @@
         @Html.ActionLink("Login","Index","Dashboard")
     </form>
 </div>
+
+<script src="~/assets/app.js"></script>
+
+<div ng-controller="MainCtrl" class="container">
+    <div>
+        <table ng-table="tableParams" class="table">
+            <tr ng-repeat="user in users">
+                <td data-title="'Name'">{{user.name}}</td>
+                <td data-title="'Age'" >{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
