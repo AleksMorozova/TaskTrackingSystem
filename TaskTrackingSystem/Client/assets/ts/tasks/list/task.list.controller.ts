@@ -2,24 +2,22 @@
 import TaskModel = require("tasks.model");
 import ITaskScope = require("task.list.controller.scope");
 import BaseController = require("baseController");
-import a = NgTable.ITableParamsConstructor;
 
 class TaskListController extends BaseController {
     public $scope: ITaskScope;
     public taskService: TaskService;
-    public tableParams: NgTableParams<any>;
 
     public static $inject = [
         "$scope",
-        "task.service",
-        "NgTableParams"
+        "task.service"
     ];
 
     constructor(
         $scope: ITaskScope,
-        taskService: TaskService) {
+        taskService: TaskService
+    ) {
         super();
-
+        debugger;
         this.$scope = $scope;
         this.taskService = taskService;
         this.$scope.tasks = new Array();
@@ -33,9 +31,10 @@ class TaskListController extends BaseController {
         //    }
         //});
         debugger;
-        this.tableParams = new NgTableParams<any>({
-            sorting: { name: "asc" }
-        });
+        //this.tableParams.
+        //this.tableParams = new a({
+        //    sorting: { name: "asc" }
+        //});
 
         this.$scope.users = [
             { name: "Moroni", age: 50 },

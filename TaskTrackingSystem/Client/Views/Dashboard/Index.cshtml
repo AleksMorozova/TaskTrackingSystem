@@ -45,9 +45,9 @@
     
     <div>
         <table ng-table class="table">
-            <tr ng-repeat="user in users">
-                <td data-title="'Name'" data-filter="{ Name: 'text'}" data-sortable="'Name'">{{user.name}}</td>
-                <td data-title="'Age'" data-filter="{ Age: 'number'}" data-sortable="'Age'">{{user.age}}</td>
+            <tr ng-repeat="user in users | orderBy:sortType:sortReverse">
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
             </tr>
         </table>
     </div>
