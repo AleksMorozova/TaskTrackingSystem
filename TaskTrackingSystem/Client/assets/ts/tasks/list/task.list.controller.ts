@@ -21,6 +21,9 @@ class TaskListController extends BaseController
         this.$scope = $scope;
         this.taskService = taskService;
         this.$scope.tasks = new Array();
+        this.$scope.sortType = 'name'; 
+        this.$scope.sortReverse = false; 
+        this.$scope.search = ''; 
         this.load();
     }
 

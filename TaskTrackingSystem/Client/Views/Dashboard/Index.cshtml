@@ -7,19 +7,66 @@
 <script data-main="assets/ts/tasks/task.entry.js" src="../Scripts/require.js"></script>
 
 <div ng-controller="task.controller">
-    <table class="table table-striped table-bordered nowrap" width="100%">
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input type="text" class="form-control" placeholder="Search" ng-model="searchFish">
+            </div>
+        </div>
+    </form>
+    
+    <table class="table table-bordered table-striped">
+
         <thead>
             <tr>
-                <th>Number</th>
-                <th>Specification</th>
-                <th>CreationDate</th>
-                <th>FinishDate</th>
-                <th>Priority</th>
-                <th>Status</th>
+                <td>
+                    <a href="#" ng-click="sortType = 'Number'; sortReverse = !sortReverse">
+                        Number
+                        <span ng-show="sortType == 'Number' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Number' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" ng-click="sortType = 'Specification'; sortReverse = !sortReverse">
+                        Specification
+                        <span ng-show="sortType == 'Specification' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Specification' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" ng-click="sortType = 'CreationDate'; sortReverse = !sortReverse">
+                        CreationDate
+                        <span ng-show="sortType == 'CreationDate' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'CreationDate' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" ng-click="sortType = 'FinishDate'; sortReverse = !sortReverse">
+                        FinishDate
+                        <span ng-show="sortType == 'FinishDate' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'FinishDate' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" ng-click="sortType = 'Priority'; sortReverse = !sortReverse">
+                        Priority
+                        <span ng-show="sortType == 'Priority' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Priority' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" ng-click="sortType = 'Status'; sortReverse = !sortReverse">
+                        Status
+                        <span ng-show="sortType == 'Status' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Status' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
             </tr>
         </thead>
+
         <tbody>
-            <tr ng-repeat="task in tasks">
+            <tr ng-repeat="task in tasks | orderBy:sortType:sortReverse | filter:searchFish">
                 <td>{{ task.Number }}</td>
                 <td>{{ task.Specification }}</td>
                 <td>{{ task.CreationDate | date:"MM/dd/yyyy h:mma"}}</td>
@@ -28,11 +75,6 @@
                 <td>{{ task.Status }}</td>
             </tr>
         </tbody>
+
     </table>
 </div>
-
-<script>
-    $(document).ready(function () {
-        $('#demoTable').DataTable();
-    });
-</script>
