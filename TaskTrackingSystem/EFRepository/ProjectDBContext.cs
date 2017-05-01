@@ -5,9 +5,10 @@ namespace EFRepository
 {
     public class ProjectDBContext : DbContext
     {
-        public ProjectDBContext()
+        public ProjectDBContext() : base("TasksTrackingSystem")
         {
-            Database.SetInitializer(new ProjectDBInitializer());
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+            Database.SetInitializer<ProjectDBContext>(new ProjectDBInitializer());
         }
 
         public DbSet<User> Users { get; set; }
