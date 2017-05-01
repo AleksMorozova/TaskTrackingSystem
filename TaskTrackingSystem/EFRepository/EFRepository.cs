@@ -32,19 +32,19 @@ namespace EFRepository
         public void Remove(Guid id)
         {
             var ent = Read(id);
-            Remove(ent);
-            DbContext.SaveChanges();
+            ent.IsActive = false;
+            Update(ent);
         }
 
         public void Remove(T entity)
         {
-            DbContext.Set<T>().Remove(entity);
-            DbContext.SaveChanges();
+            Remove(entity.Id);
         }
 
         public virtual void Update(T entity)
         {
-            DbContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            var updated = Read(entity.Id);
+            DbContext.Entry(updated).State = System.Data.Entity.EntityState.Modified;
             DbContext.SaveChanges();
         }
     }

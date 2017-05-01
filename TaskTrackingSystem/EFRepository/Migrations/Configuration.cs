@@ -9,7 +9,7 @@ namespace EFRepository.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "EFRepo.ProjectDBContext";
         }
     }

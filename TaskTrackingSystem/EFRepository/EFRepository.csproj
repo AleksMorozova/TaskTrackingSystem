@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201703232005481_InitialCreate.Designer.cs">
       <DependentUpon>201703232005481_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705011930216_AddIsActiveField.cs" />
+    <Compile Include="Migrations\201705011930216_AddIsActiveField.Designer.cs">
+      <DependentUpon>201705011930216_AddIsActiveField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjectDBContext.cs" />
     <Compile Include="ProjectDBInitializer.cs" />
@@ -85,6 +89,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703232005481_InitialCreate.resx">
       <DependentUpon>201703232005481_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705011930216_AddIsActiveField.resx">
+      <DependentUpon>201705011930216_AddIsActiveField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
