@@ -8,12 +8,12 @@ namespace Services.Implementation
 {
     public class UserImplementation : IUserContract
     {
-        public void SaveUser(User user)
+        public void AddUser(User user)
         {
             Registration.UserRepository.Create(user);
         }
 
-        public List<User> GetAllUsers()
+        public IEnumerable<User> GetAllUsers()
         {
             return Registration.UserRepository.ReadAll().ToList();
         }

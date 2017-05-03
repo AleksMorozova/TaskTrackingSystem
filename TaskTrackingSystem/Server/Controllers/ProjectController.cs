@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using Server.Models;
+using Server.Services;
 
 namespace Server.Controllers
 {
     [RoutePrefix("api/projects")]
     public class ProjectController : ApiController
     {
-        public ProjectController()
+        private readonly IProjectService _projectService;
+    
+        public ProjectController(IProjectService projectService)
         {
-
+            _projectService = projectService;
         }
 
         [HttpGet]
         [Route("")]
         public IEnumerable<ProjectAPIModel> GetAllProjects()
         {
-            return null;
+            return _projectService.GetAllProject();
         }
 
         [HttpPost]

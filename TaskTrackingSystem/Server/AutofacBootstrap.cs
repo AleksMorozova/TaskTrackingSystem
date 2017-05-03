@@ -14,7 +14,11 @@ namespace Server
             var builder = new ContainerBuilder();
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType(typeof(TaskService)).AsImplementedInterfaces();
+            builder.RegisterType(typeof(UserService)).AsImplementedInterfaces();
+            builder.RegisterType(typeof(ProjectService)).AsImplementedInterfaces();
+            builder.RegisterType(typeof(ProjectImplementation)).AsImplementedInterfaces();
             builder.RegisterType(typeof(IssueImplementation)).AsImplementedInterfaces();
+            builder.RegisterType(typeof(UserImplementation)).AsImplementedInterfaces();
             var container = builder.Build();
 
             // Create the depenedency resolver.

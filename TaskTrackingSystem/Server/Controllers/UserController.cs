@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using Server.Models;
+using Server.Services;
 
 namespace Server.Controllers
 {
     [RoutePrefix("api/users")]
     public class UserController : ApiController
     {
-        public UserController()
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
         {
-
+            _userService = userService;
         }
 
         [HttpGet]
         [Route("")]
         public IEnumerable<UserAPIModel> GetAllUsers()
         {
-            return null;
+            return _userService.GetAllUsers();
         }
 
         [HttpPost]
