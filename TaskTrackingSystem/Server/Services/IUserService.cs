@@ -11,7 +11,6 @@ namespace Server.Services
         IEnumerable<UserAPIModel> GetAllUsers();
         void AddUser(UserAPIModel userModel);
         void UpdateUser(UserAPIModel userModel);
-        void DeleteUser(UserAPIModel userModel);
         void DeleteUser(Guid userId);
     }
 }

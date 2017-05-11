@@ -7,7 +7,6 @@ namespace EFRepository
     {
         void Create(T entity);
         void Update(T entity);
-        void Remove(T entity);
         void Remove(Guid id);
         T Read(Guid id);
         IEnumerable<T> ReadAll();

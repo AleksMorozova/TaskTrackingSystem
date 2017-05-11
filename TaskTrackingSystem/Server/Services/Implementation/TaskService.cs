@@ -55,19 +55,20 @@ namespace Server.Services.Implementation
 
         public void UpdateTask(TaskAPIModel taskModel)
         {
-            throw new NotImplementedException();
+            var issueModel = new Issue
+            {
+                Status = EnumHelper.ParseEnum<Status>(taskModel.Status),
+                CreationDate = DateTime.Now,
+                FinishDate = taskModel.FinishDate,
+                Number = taskModel.Number,
+                Priority = EnumHelper.ParseEnum<Priority>(taskModel.Priority),
+                Specification = taskModel.Specification
+            };
+            _contract.UpdateIssue(issueModel);
         }
-
-        public void DeleteTask(TaskAPIModel taskModel)
-        {
-            var issue = _contract.FindById(taskModel.Id);
-            _contract.DeleteIssue(issue);
-        }
-
         public void DeleteTask(Guid taskId)
         {
             _contract.DeleteIssue(taskId);
-        }
-        
+        } 
     }
 }

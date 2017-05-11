@@ -9,7 +9,6 @@ namespace Server.Services
         IEnumerable<TaskAPIModel> GetAllTasks();
         void AddTask(TaskAPIModel taskModel);
         void UpdateTask(TaskAPIModel taskModel);
-        void DeleteTask(TaskAPIModel taskModel);
         void DeleteTask(Guid taskId);
     }
 }

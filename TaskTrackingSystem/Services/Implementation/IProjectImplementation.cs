@@ -20,11 +20,6 @@ namespace Services.Implementation
             throw new NotImplementedException();
         }
 
-        public void DeleteProject(Project model)
-        {
-            throw new NotImplementedException();
-        }
-
         public Project FindById(Guid projectId)
         {
             throw new NotImplementedException();

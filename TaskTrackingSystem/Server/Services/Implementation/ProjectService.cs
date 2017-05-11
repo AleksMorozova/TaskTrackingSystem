@@ -24,11 +24,6 @@ namespace Server.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public void DeleteProject(ProjectAPIModel projectModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<ProjectAPIModel> GetAllProject()
         {
             return _contract.GetAllProjects().Select(project => new ProjectAPIModel

@@ -26,21 +26,21 @@ namespace Server.Controllers
         [Route("")]
         public void PostUser([FromBody]UserAPIModel model)
         {
-
+            _userService.AddUser(model);
         }
 
         [HttpPut]
         [Route("")]
-        public void PutUser(Guid id, [FromBody]UserAPIModel model)
+        public void PutUser([FromBody]UserAPIModel model)
         {
-
+            _userService.UpdateUser(model);
         }
 
         [HttpDelete]
         [Route("")]
         public void DeleteUser(Guid id)
         {
-
+            _userService.DeleteUser(id);
         }
     }
 }

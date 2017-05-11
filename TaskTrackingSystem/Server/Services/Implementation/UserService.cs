@@ -40,11 +40,6 @@ namespace Server.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public void DeleteUser(UserAPIModel userModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public void DeleteUser(Guid userId)
         {
             throw new NotImplementedException();

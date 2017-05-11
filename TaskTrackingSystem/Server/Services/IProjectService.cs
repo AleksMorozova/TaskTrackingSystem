@@ -11,7 +11,6 @@ namespace Server.Services
         IEnumerable<ProjectAPIModel> GetAllProject();
         void AddProject(ProjectAPIModel projectModel);
         void UpdateProject(ProjectAPIModel projectModel);
-        void DeleteProject(ProjectAPIModel projectModel);
         void DeleteProject(Guid projectId);
     }
 }

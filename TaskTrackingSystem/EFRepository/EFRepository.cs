@@ -36,11 +36,6 @@ namespace EFRepository
             Update(ent);
         }
 
-        public void Remove(T entity)
-        {
-            Remove(entity.Id);
-        }
-
         public virtual void Update(T entity)
         {
             var updated = Read(entity.Id);

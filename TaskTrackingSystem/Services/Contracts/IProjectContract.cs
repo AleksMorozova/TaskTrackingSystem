@@ -15,8 +15,6 @@ namespace Services.Contracts
 
         void UpdateProject(Project model);
 
-        void DeleteProject(Project model);
-
         void DeleteProject(Guid projectId);
 
         Project FindById(Guid projectId);

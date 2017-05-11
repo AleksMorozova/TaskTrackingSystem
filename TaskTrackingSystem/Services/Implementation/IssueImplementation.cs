@@ -23,11 +23,6 @@ namespace Services.Implementation
             Registration.IssueRepository.Update(issue);
         }
 
-        public void DeleteIssue(Issue issue)
-        {
-            Registration.IssueRepository.Remove(issue);
-        }
-
         public void DeleteIssue(Guid issueId)
         {
             Registration.IssueRepository.Remove(issueId);
